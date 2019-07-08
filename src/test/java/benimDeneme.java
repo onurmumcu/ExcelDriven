@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -19,19 +18,53 @@ public class benimDeneme {
 		
 		for(int i =0; i<sheetNum; i++) {
 			
-			if(workbook.getSheetName(i).equalsIgnoreCase("data1")) {
+			if(workbook.getSheetName(i).equalsIgnoreCase("testdata")) {
 		
 				XSSFSheet sheet = workbook.getSheetAt(i);
 				Iterator<Row> rows = sheet.iterator();
-				Row firstRow = rows.next();
 				
-//		calismiyor		Row secondRow = rows.next();
-//		calismiyor		System.out.println(firstRow.toString());				
-//		calismiyor		System.out.println(secondRow);
+	while(rows.hasNext()) {		
 				
-				Iterator<Cell> cells = firstRow.cellIterator();
+				Row row = rows.next();
+								
+				Iterator<Cell> rowCells = row.cellIterator();
 				
-				System.out.println(cells);
+
+				
+				
+				while(rowCells.hasNext()) {
+				Cell cell = rowCells.next();
+				System.out.print(cell+" | ");
+				}
+				
+				System.out.println();
+	}	
+//				Row secondRow = rows.next();
+//				
+//				Iterator<Cell> secondRowCells = secondRow.cellIterator();
+//				
+//
+//				
+//				
+//				while(secondRowCells.hasNext()) {
+//				Cell secondCell = secondRowCells.next();
+//				
+//				System.out.print(secondCell+" | ");
+//				}
+//				
+				
+				
+				
+				
+//				Cell secondCell = cells.next();
+//				System.out.print(secondCell+" | ");
+				
+//				if(firstCell.getStringCellValue().equalsIgnoreCase("data1")) {
+//					System.out.println(firstCell);
+//				}
+					
+				
+				
 				
 			}
 			
