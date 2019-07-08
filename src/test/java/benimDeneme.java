@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class benimDeneme {
 	public static void main(String[] args) throws IOException {
 		
-		FileInputStream fis=new FileInputStream("C://Users//Onur//Downloads//demoData.xlsx");
+		FileInputStream fis=new FileInputStream("demoData.xlsx");
 		
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		
