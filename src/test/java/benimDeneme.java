@@ -45,16 +45,13 @@ public class benimDeneme {
 //				
 //
 //				
-//				
+//
 //				while(secondRowCells.hasNext()) {
 //				Cell secondCell = secondRowCells.next();
 //				
 //				System.out.print(secondCell+" | ");
 //				}
 //				
-				
-				
-				
 				
 //				Cell secondCell = cells.next();
 //				System.out.print(secondCell+" | ");
