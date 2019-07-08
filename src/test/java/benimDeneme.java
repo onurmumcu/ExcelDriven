@@ -2,7 +2,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -20,8 +22,16 @@ public class benimDeneme {
 			if(workbook.getSheetName(i).equalsIgnoreCase("data1")) {
 		
 				XSSFSheet sheet = workbook.getSheetAt(i);
-				Iterator<Row> Rows = sheet.iterator();
+				Iterator<Row> rows = sheet.iterator();
+				Row firstRow = rows.next();
 				
+//		calismiyor		Row secondRow = rows.next();
+//		calismiyor		System.out.println(firstRow.toString());				
+//		calismiyor		System.out.println(secondRow);
+				
+				Iterator<Cell> cells = firstRow.cellIterator();
+				
+				System.out.println(cells);
 				
 			}
 			
