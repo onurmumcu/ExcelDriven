@@ -16,8 +16,11 @@ public class benimDeneme {
 	
 	public static void main(String[] args) throws IOException {
 		
+//		benimDeneme ilk = new benimDeneme();
+//		ilk.butunSheetYazdir();
 		
-		
+		benimDeneme ikinci = new benimDeneme();
+		ikinci.butunRowYazdir();
 		 	
 	}
 
@@ -60,13 +63,41 @@ public class benimDeneme {
 		
 	
 
-	public  void butunRowYazdir() throws IOException {
+	public void butunRowYazdir() throws IOException {
 		fis=new FileInputStream("demoData.xlsx");
 		workbook = new XSSFWorkbook(fis);
 		
+		XSSFSheet sheets = workbook.getSheet("testdata");
+		
+		Iterator<Row> row =  sheets.iterator();
+		Row birinci = row.next();
+		Iterator<Cell> cell = birinci.cellIterator();
+		while(cell.hasNext()) {
+			Cell ilkCell = cell.next();		
+				
+		System.out.print(ilkCell.getStringCellValue()+" - ");
+		}
+		
 	}
 
-	
+	public void butunColumnYazdir() throws IOException {
+		fis=new FileInputStream("demoData.xlsx");
+		workbook = new XSSFWorkbook(fis);
+		
+		XSSFSheet sheets = workbook.getSheet("testdata");
+		
+		Iterator<Row> row =  sheets.iterator();
+		while(row.hasNext()){
+		Row birinci = row.next();
+		}
+		//Iterator<Cell> cell = birinci.cellIterator();
+		//while(cell.hasNext()) {
+	    Cell ilkCell = cell.next();
+				
+		System.out.print(ilkCell.getStringCellValue()+" - ");
+		}
+		
+	}
 	
 	
 }
