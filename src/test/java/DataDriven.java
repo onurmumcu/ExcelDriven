@@ -17,7 +17,8 @@ public class DataDriven {
 	//once coloumn is identified then scan entire testcase coloum to identify purcjhase testcase row
 	//after you grab purchase testcase row = pull all the data of that row and feed into test
 	
-	public void getData(String testCaseName) throws IOException {
+	
+	public ArrayList<String> getData(String testCaseName) throws IOException {
 		
 		ArrayList<String> a = new ArrayList<String>();
 		FileInputStream fis=new FileInputStream("demoData.xlsx");
@@ -63,8 +64,17 @@ public class DataDriven {
 				Iterator<Cell>  cv=r.cellIterator();
 				while(cv.hasNext())
 				{
+					
+					//Cell c=cv.next();
+					//if(c.getCellType()==CellType.STRING) {
 				a.add((cv.next().getStringCellValue()));
-				System.out.println(a);
+				
+				//}else {
+					
+					//a.add(NumberToTextConverter.toText(c.getNumericCellValue()));
+					
+				//}
+			
 				}
 			}
 			
@@ -73,8 +83,10 @@ public class DataDriven {
 		
 					}
 	}
+
+		return a;
 	}
-	
+
 	
 	
 	
