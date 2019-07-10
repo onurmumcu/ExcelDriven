@@ -1,5 +1,4 @@
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -22,6 +21,8 @@ public class benimDeneme {
 		benimDeneme ikinci = new benimDeneme();
 		ikinci.butunRowYazdir();
 		 	
+		benimDeneme ucuncu = new benimDeneme();
+		//ucuncu.butunColumnYazdir();
 	}
 
 	
@@ -60,9 +61,7 @@ public class benimDeneme {
 			}
 		}
 		}
-		
 	
-
 	public void butunRowYazdir() throws IOException {
 		fis=new FileInputStream("demoData.xlsx");
 		workbook = new XSSFWorkbook(fis);
@@ -71,6 +70,7 @@ public class benimDeneme {
 		
 		Iterator<Row> row =  sheets.iterator();
 		Row birinci = row.next();
+		
 		Iterator<Cell> cell = birinci.cellIterator();
 		while(cell.hasNext()) {
 			Cell ilkCell = cell.next();		
@@ -89,15 +89,15 @@ public class benimDeneme {
 		Iterator<Row> row =  sheets.iterator();
 		while(row.hasNext()){
 		Row birinci = row.next();
-		}
-		//Iterator<Cell> cell = birinci.cellIterator();
+		
+		Iterator<Cell> cell = birinci.cellIterator();
 		//while(cell.hasNext()) {
 	    Cell ilkCell = cell.next();
 				
-		System.out.print(ilkCell.getStringCellValue()+" - ");
+		System.out.println(ilkCell.getStringCellValue()+" - ");
 		}
-		
-	}
+		}
+	
 	
 	
 }
