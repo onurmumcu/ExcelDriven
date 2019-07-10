@@ -17,7 +17,7 @@ public class DataDriven {
 	//once coloumn is identified then scan entire testcase coloum to identify purcjhase testcase row
 	//after you grab purchase testcase row = pull all the data of that row and feed into test
 	
-	public void getData() throws IOException {
+	public void getData(String testCaseName) throws IOException {
 		
 		ArrayList<String> a = new ArrayList<String>();
 		FileInputStream fis=new FileInputStream("demoData.xlsx");
@@ -32,7 +32,7 @@ public class DataDriven {
 			XSSFSheet sheet=workbook.getSheetAt(i);
 			//Identify Testcases coloum by scanning the entire 1st row
 			
-			 Iterator<Row>  rows= sheet.iterator();// sheet is collection of rows
+			Iterator<Row>  rows= sheet.iterator();// sheet is collection of rows
 			Row firstrow= rows.next();
 			Iterator<Cell> ce=firstrow.cellIterator();//row is collection of cells
 			int k=0;
@@ -55,7 +55,7 @@ public class DataDriven {
 		{
 			
 			Row r=rows.next();
-			if(r.getCell(coloumn).getStringCellValue().equalsIgnoreCase("Purchase "))
+			if(r.getCell(coloumn).getStringCellValue().equalsIgnoreCase(testCaseName))
 			{
 				
 				////after you grab purchase testcase row = pull all the data of that row and feed into test
@@ -79,11 +79,12 @@ public class DataDriven {
 	
 	
 	public static void main(String[] args) throws IOException {
-//fileInputStream argument
 				
-
+		DataDriven d = new DataDriven();
+		d.getData("Purchase ");
+		
 				}
 
-				
+	
 	}
 	
