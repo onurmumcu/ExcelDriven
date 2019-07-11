@@ -22,22 +22,14 @@ public class YeniDeneme {
 	Row row = worksheet.getRow(0);
 	Cell cell = row.getCell(0);
 	
-	Iterator<Row> rows = worksheet.iterator();
-	
-	
-	//System.out.println(cell);
-	
-	
-	
-	//------------------------------------------
+	System.out.println(cell);
 	
 	int rowsCount= worksheet.getPhysicalNumberOfRows();
 	int lastrowNumber= worksheet.getLastRowNum();
 	int cellCount = row.getPhysicalNumberOfCells();
 	
-	//System.out.println(cellCount);
+	System.out.println(cellCount);
 	
-	//------------------------------------------
 	
 	for(int i = 0; i<rowsCount; i++) {
 		row = worksheet.getRow(i);
@@ -45,10 +37,9 @@ public class YeniDeneme {
 		System.out.println(i+" - "+cell);
 	}
 	
-	//--------------------------------------------
 	
 	Cell log = worksheet.getRow(1).getCell(1);
-	//System.out.println(log);
+	System.out.println(log);
 	
 	for(int i = 1; i<rowsCount; i++) {
 		Row myRow = worksheet.getRow(i);
@@ -59,7 +50,7 @@ public class YeniDeneme {
 		}
 	}
 	
-	//--------------------------------------------
+	// EXCEL YAZMA
 	
 	String testDataPath = "yeni.xlsx";
 	
